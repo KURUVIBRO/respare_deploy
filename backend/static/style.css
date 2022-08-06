@@ -120,6 +120,7 @@ body {
 
 
 .img-slider .slide .info {
+    font-family: 'Archivo';
     position: absolute;
     top: 0;
     width: 50%;
