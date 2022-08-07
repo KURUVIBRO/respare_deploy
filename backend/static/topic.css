@@ -200,8 +200,8 @@ li{
 .comment p{
     margin-top: 0.3em;
     margin-bottom: 0.2em;
-    line-break:auto;
-    font-size: 0.2em;
+    line-break:anywhere;
+
 }
 
 .comment a{
@@ -368,6 +368,7 @@ li{
         left: 0;
         top: 4vh;
         height: fit-content;
+        
     }
     .comment-section {
         position: relative;
@@ -387,6 +388,17 @@ li{
         top: 2%;
         width: 100%;
         height: fit-content;
+    }
+
+
+    .comment{
+        font-family: 'Roboto';
+        font-weight: 300;
+        font-size: medium;
+    }
+
+    .comment a{
+        font-weight: 500;
     }
 }
 @media screen and (min-width:920px ) {
