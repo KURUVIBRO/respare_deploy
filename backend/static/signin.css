@@ -36,24 +36,6 @@ a{
     font-size: larger;
 }
 
-body .head{
-    position: absolute;
-    align-self: center;
-    margin: 22vh;
-    left: 4vw; 
-    width: 20vw;
-    color: brown;
-    height: 30vh;
-
-}
-
-.head h1{
-    position: relative;
-    font-size: 8em;
-    font-family: 'Aleo';
-    text-shadow: 0 0 #a09f9f;
-    
-}
 
 
 .head h1:hover{
@@ -61,12 +43,6 @@ body .head{
     transition: .5s;
 }
 
-.head label{
-    position: relative;
-    top: 40%;
-    font-family: 'Montserrat';
-    font-size: 1.5em;
-}
 
 
 
@@ -74,20 +50,7 @@ body .head{
 
 
 
-form{
-    box-sizing: border-box;
-    position: relative;
-    left: 62%;
-    margin-top: 10.5%;
-    width: 21vw;
-    background: rgb(237 215 215 / 23%);
-    border-radius: 1.2em;
-    padding: 5%;
-    bottom: 50%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
+
 
 form .form-control{
     position: relative;
@@ -112,17 +75,6 @@ form .form-control:focus{
     background:none;
 }
 
-
-.form-group {
-    position: relative;
-    margin-bottom: 40px;
-    outline: 0px;
-    
-}
-
-
-
-
 .form-control-label {
     font-family:'Montserrat';
     font-size:1.2em;
@@ -131,19 +83,7 @@ form .form-control:focus{
     color: brown    ;
 }
 
-.btn{
-    background: none;
-    padding: 2px 1px;
-    font-family: 'Montserrat';
-    color: brown;
-    font-weight: bold;
-    font-size: 1em;
-    width: 6vw;
-    height: 4vh;
-    border:2px solid;
-    border-radius: .7em;
-    border-color: brown;
-}
+
 
 .btn:hover{
     background: brown;
@@ -151,13 +91,159 @@ form .form-control:focus{
     transition: .6s;
 }
 
-.register a {
-    position: relative;
-    left:6%;
-    font-size: medium;
-    font-family: 'Cascadia Mono';
-}
+
 
 .register a:hover{
     color: brown;
 }
+
+@media screen and (min-width:920px ) {
+
+    .register a {
+        position: relative;
+        left:6%;
+        font-size: medium;
+        font-family: 'Cascadia Mono';
+    }
+    
+    .btn{
+        background: none;
+        padding: 2px 1px;
+        font-family: 'Montserrat';
+        color: brown;
+        font-weight: bold;
+        font-size: 1em;
+        width: 6vw;
+        height: 4vh;
+        border:2px solid;
+        border-radius: .7em;
+        border-color: brown;
+    }
+    form{
+        box-sizing: border-box;
+        position: relative;
+        left: 62%;
+        margin-top: 10.5%;
+        width: 21vw;
+        background: rgb(237 215 215 / 23%);
+        border-radius: 1.2em;
+        padding: 5%;
+        bottom: 50%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    
+    .form-group {
+    position: relative;
+    margin-bottom: 40px;
+    outline: 0px;
+    
+    }
+
+    body .head{
+        position: absolute;
+        align-self: center;
+        margin: 22vh;
+        left: 4vw; 
+        width: 20vw;
+        color: brown;
+        height: 30vh;
+    
+    }
+    
+    .head h1{
+        position: relative;
+        font-size: 8em;
+        font-family: 'Aleo';
+        text-shadow: 0 0 #a09f9f;
+        
+    }
+    .head label{
+        position: relative;
+        top: 40%;
+        font-family: 'Montserrat';
+        font-size: 1.5em;
+    }
+    
+    
+}
+
+@media screen and (max-width:1000px) {
+    .register a {
+        position: relative;
+        top: 1vh;
+        left: 2%;
+        /* text-align: center; */
+        font-size: medium;
+        font-family: 'Cascadia Mono';
+    }
+
+    .form-group {
+        position: relative;
+        margin-bottom: 40px;
+        outline: 0px;
+        width: 100%;
+    }
+
+    form {
+        box-sizing: border-box;
+        position: relative;
+        left: 25vw;
+        /* margin-top: 0%; */
+        width: 49vw;
+        background: rgb(237 215 215 / 23%);
+        border-radius: 1.2em;
+        padding: 5%;
+        top: 21vh;
+        /* bottom: 60%; */
+        height: fit-content;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    body .head {
+        position: relative;
+        /* align-self: center; */
+        /* margin-right: 0; */
+        margin: 2vh;
+        margin: 1vh 1vw;
+        left: 25vw;
+        top: 16vh;
+        width: 20vw;
+        color: brown;
+        height: fit-content;
+    }
+
+    .head label {
+        position: absolute;
+        top: 7%;
+        font-family: 'Montserrat';
+        font-size: 1.5em;
+    }
+    .head h1 {
+        position: relative;
+        margin: 0;
+        font-size: 8em;
+        font-family: 'Aleo';
+        text-shadow: 0 0 #a09f9f;
+    }
+    .btn {
+        background: none;
+        padding: 2px 1px;
+        font-family: 'Montserrat';
+        color: brown;
+        font-weight: bold;
+        font-size: 1em;
+        width: 13vw;
+        height: 3vh;
+        border: 2px solid;
+        border-radius: 0.7em;
+        border-color: brown;
+    }
+}
+
+
+
