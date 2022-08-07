@@ -5,6 +5,7 @@ body {
     background-color: #F0F2F5;
     width:100vw;
     font-size: 1.5vh;
+    overflow-x: hidden;
 }
 
 body .topic-container{
@@ -199,6 +200,7 @@ li{
 .comment p{
     margin-top: 0.3em;
     margin-bottom: 0.2em;
+    line-break: anywhere;
 }
 
 .comment a{
@@ -352,6 +354,35 @@ li{
         display: block;
         position: relative;
         left: 3%;
+        top: 2%;
+        width: 100%;
+        height: fit-content;
+    }
+    .comments {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        width: auto;
+        max-width: 100%;
+        left: 0;
+        top: 4vh;
+        height: fit-content;
+    }
+    .comment-section {
+        position: relative;
+        align-self: center;
+        width: 90%;
+        /* max-width: 100%; */
+        height: fit-content;
+        margin-top: 1vh;
+        border-radius: 1em;
+        display: flex;
+        flex-direction: column;
+    }
+    .comments-input {
+        display: block;
+        position: relative;
+        left: 1%;
         top: 2%;
         width: 100%;
         height: fit-content;
