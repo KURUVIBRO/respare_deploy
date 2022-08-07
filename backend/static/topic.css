@@ -399,6 +399,7 @@ li{
 
     .comment a{
         font-weight: 500;
+        font-size: smaller;
     }
 }
 @media screen and (min-width:920px ) {
