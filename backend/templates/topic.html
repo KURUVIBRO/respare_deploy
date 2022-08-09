@@ -30,8 +30,7 @@
     
     <div class="nav">
         <a class="logo" href="/">respare.</a>
-        <div class="categories nav">
-            <a href="categories">Categories</a>
+        <div class="categories">
             <a href="about">About</a>
             {%if user.is_authenticated %}
             <a class="login">{{user.username}}</a>
@@ -39,7 +38,7 @@
             {% else %}
             <a class="login" href="/signin">Login</a>
             {% endif %}
-            <input type="text" class="searchbox" placeholder="Search...">
+            
         </div>
     </div>
     

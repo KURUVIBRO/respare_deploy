@@ -245,6 +245,9 @@ li{
         font-size: 1em;
         font-family: Cascadia Mono;
         padding-top: 0.4%;
+        position: relative;
+         top: 0.4vh;
+    }
     }
     
     .nav input[type="text"] {
