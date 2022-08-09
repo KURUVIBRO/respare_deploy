@@ -33,8 +33,6 @@ def register(request):
       pass1 = request.POST['pass1']
       pass2 = request.POST['pass2']
       
-      if User.object.filter(username=uname).exists()
-        return Response("1")
 
       myuser = User.objects.create_user(uname, email, pass1)
       myuser.first_name=fname
@@ -45,10 +43,10 @@ def register(request):
       myprofile.save()
       messages.success(request, "Your account has been successfully created")
 
-      return Response("0")
+      return redirect('signin')
 
     
-    #return render(request,"register.html")
+    return render(request,"register.html")
 
 
 def signin(request):
@@ -67,6 +65,7 @@ def signin(request):
             return redirect('home')
     
     return render(request, "signin.html")
+
 
 def signout(request):
     logout(request)
