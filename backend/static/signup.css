@@ -48,37 +48,14 @@ a:hover{
     color: brown;
 }
 
-body .head{
-    position: absolute;
-    align-self: center;
-    margin: 22vh;
-    left: 4vw; 
-    width: 20vw;
-    color: brown;
-    height: 30vh;
-}
 
-.head h1{
-    position: relative;
-    font-size: 8em;
-    font-family: 'Aleo';
-    text-shadow: 0 0 #a09f9f;
-    
-}
 
 .head h1:hover{
     text-shadow: 0 0 3px #dadada , 0 0 5px #af2732;
     transition: .5s;
 }
 
-.head label{
-    position: relative;
-    top: 40%;
-    font-family: 'Montserrat';
-    font-size: 1.5em;
 
-
-}
 
 
 body .container{
@@ -97,33 +74,21 @@ body .container{
     text-align: center;
 }
 
- form{
-    box-sizing: border-box;
-    position: relative;
-    left: 60%;
-    margin-top: 6%;
-    width: 27vw;
-    background: rgb(237 215 215 / 23%);
-    border-radius: 1.2em;
-    padding: 2.2%;
-    bottom: 50%;
-    display: flex;
-    flex-direction: column;
-    -webkit-box-shadow: -1px 0px 7px -6px rgba(0,0,0,0.44);
--moz-box-shadow: -1px 0px 7px -6px rgba(0,0,0,0.44);
-box-shadow: -1px 0px 7px -6px rgba(0,0,0,0.44);
- }
+
 
 form .form-control{
     position: relative;
-    margin:1vh 0;
-    width:100%;
-    padding:0 0 1vh 0;
-    border:none;
+    margin: 1vh 0;
+    width: 100%;
+    padding: 0.2vh 0.2vw 1vh 0.2vw;
+    border: none;
     border-bottom: 2px solid brown;
     background: none;
     outline: none;
-    font-family: 'Archivo';
+    font-family: 'Montserrat';
+    font-weight: 600;
+    color: #373737;
+    font-size: 1.15em;
 }
 
 form .form-control:focus{
@@ -142,13 +107,7 @@ form a:hover{
 }
 
 
-.form-group {
-    position: relative;
-    /* margin-bottom: 1vh; */
-    margin: 1vh 2vw;
-    outline: 0px;
-    
-}
+
 
 
 
@@ -161,22 +120,7 @@ form a:hover{
     color: brown    ;
 }
 
-.btn{
-    position: relative;
-    background: none;
-    padding: 2px 1px;
-    left: 7vw;
-    /* justify-self: center; */
-    font-family: 'Montserrat';
-    color: brown;
-    font-weight: bold;
-    font-size: 1em;
-    width: 6vw;
-    height: 4vh;
-    border: 2px solid;
-    border-radius: 0.7em;
-    border-color: brown;
-}
+
 
 .btn:hover{
     background: brown;
@@ -184,13 +128,171 @@ form a:hover{
     transition: .6s;
 }
 
-.register a {
-    position: relative;
-    left:6%;
-    font-size: medium;
-    font-family: 'Cascadia Mono';
-}
+
 
 .register a:hover{
     color: brown;
+}
+
+
+@media screen and (min-width:920px ) {
+    .register a {
+        position: relative;
+        left:6%;
+        font-size: medium;
+        font-family: 'Cascadia Mono';
+    }
+
+    .form-group {
+        position: relative;
+        /* margin-bottom: 1vh; */
+        margin: 1vh 2vw;
+        outline: 0px;
+        
+    }
+
+    form{
+        box-sizing: border-box;
+        position: relative;
+        left: 60%;
+        margin-top: 6%;
+        width: 27vw;
+        background: rgb(237 215 215 / 23%);
+        border-radius: 1.2em;
+        padding: 2.2%;
+        bottom: 50%;
+        display: flex;
+        flex-direction: column;
+        -webkit-box-shadow: -1px 0px 7px -6px rgba(0,0,0,0.44);
+    -moz-box-shadow: -1px 0px 7px -6px rgba(0,0,0,0.44);
+    box-shadow: -1px 0px 7px -6px rgba(0,0,0,0.44);
+     }
+
+    .head label{
+        position: relative;
+        top: 40%;
+        font-family: 'Montserrat';
+        font-size: 1.5em;
+    
+    
+    }
+
+    .btn{
+        position: relative;
+        background: none;
+        padding: 2px 1px;
+        left: 7vw;
+        /* justify-self: center; */
+        font-family: 'Montserrat';
+        color: brown;
+        font-weight: bold;
+        font-size: 1em;
+        width: 6vw;
+        height: 4vh;
+        border: 2px solid;
+        border-radius: 0.7em;
+        border-color: brown;
+    }
+
+    body .head{
+        position: absolute;
+        align-self: center;
+        margin: 22vh;
+        left: 4vw; 
+        width: 20vw;
+        color: brown;
+        height: 30vh;
+    }
+    
+    .head h1{
+        position: relative;
+        font-size: 8em;
+        font-family: 'Aleo';
+        text-shadow: 0 0 #a09f9f;
+        
+    }
+}
+
+@media screen and (max-width:1000px) {
+    form .form-control{
+        font-size: 1.5em;
+    }
+    .register a {
+        position: relative;
+        top: 1vh;
+        left: 2%;
+        /* text-align: center; */
+        font-size: medium;
+        font-family: 'Cascadia Mono';
+    }
+
+    .form-group {
+        position: relative;
+        margin-bottom: 40px;
+        outline: 0px;
+        width: 100%;
+    }
+
+    form {
+        box-sizing: border-box;
+        position: relative;
+        left: 25vw;
+        /* margin-top: 0%; */
+        width: 49vw;
+        background: rgb(237 215 215 / 23%);
+        border-radius: 1.2em;
+        padding: 5%;
+        top: 15vh;
+        /* bottom: 60%; */
+        height: fit-content;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    body .head {
+        position: relative;
+        /* align-self: center; */
+        /* margin-right: 0; */
+        margin: 2vh;
+        margin: 1vh 1vw;
+        left: 25vw;
+        top: 16vh;
+        width: 20vw;
+        color: brown;
+        height: fit-content;
+    }
+
+    .head label {
+        position: absolute;
+        top: 7%;
+        font-family: 'Montserrat';
+        font-size: 1.5em;
+    }
+    .head h1 {
+        position: relative;
+        margin: 0;
+        font-size: 8em;
+        font-family: 'Aleo';
+        text-shadow: 0 0 #a09f9f;
+    }
+    .btn {
+        background: none;
+        padding: 2px 1px;
+        font-family: 'Montserrat';
+        color: brown;
+        font-weight: bold;
+        font-size: 1em;
+        width: 13vw;
+        height: 3vh;
+        border: 2px solid;
+        border-radius: 0.7em;
+        border-color: brown;
+        left: 0vw;
+    }
+    form a{
+       
+        left: 0vh;
+      
+    }
 }

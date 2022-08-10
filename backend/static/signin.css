@@ -54,14 +54,17 @@ a{
 
 form .form-control{
     position: relative;
-    margin:1vh 0;
-    width:100%;
-    padding:0 0 1vh 0;
-    border:none;
+    margin: 1vh 0;
+    width: 100%;
+    padding: 0.2vh 0.2vw 1vh 0.2vw;
+    border: none;
     border-bottom: 2px solid brown;
     background: none;
     outline: none;
-    font-family: 'Archivo';
+    font-family: 'Montserrat';
+    font-weight: 600;
+    color: #373737;
+    font-size: 1.15em;
 }
 
 form .form-control:focus{
@@ -171,6 +174,9 @@ form .form-control:focus{
 }
 
 @media screen and (max-width:1000px) {
+    form .form-control{
+        font-size: 1.5em;
+    }
     .register a {
         position: relative;
         top: 1vh;
