@@ -242,8 +242,7 @@ form a:hover{
         background: rgb(237 215 215 / 23%);
         border-radius: 1.2em;
         padding: 5%;
-        top: 15vh;
-        /* bottom: 60%; */
+        top: 10vh;
         height: fit-content;
         display: flex;
         flex-direction: column;
@@ -257,7 +256,7 @@ form a:hover{
         margin: 2vh;
         margin: 1vh 1vw;
         left: 25vw;
-        top: 16vh;
+        top: 9vh;
         width: 20vw;
         color: brown;
         height: fit-content;
