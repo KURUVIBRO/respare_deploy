@@ -22,6 +22,9 @@ def home(request):
     slide=recommended[:5]
     return render(request,'index.html',{'name':'Aravind','recommended':list(recommended),'trending':list(trending),'slide':slide})
 
+def about(request):
+    return render(request,"about.html")
+
 def register(request):
 
     if request.method == "POST":
@@ -141,3 +144,9 @@ def new_comment(request,pk):
     serializer=CommentSerailizer(newcomment)
     print(serializer.data)
     return Response(serializer.data)      
+
+def profile(request,uname):
+    profile=Profile.objects.get(uname=uname)
+    return render(request,'user.html',{'user':profile})
+
+    

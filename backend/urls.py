@@ -19,7 +19,9 @@ from . import views
 
 urlpatterns = [
     path('',views.home,name="home"),
+    path('about/',views.about),
     path('register/',views.register),
+    path('user/<slug:uname>/',views.profile),
     path('signin/',views.signin,name="signin"),
     path('signout/',views.signout,name="signout"),
     path('topic/<int:pk>/react/',views.react,name="react"), 

@@ -94,7 +94,11 @@ form .form-control:focus{
     transition: .6s;
 }
 
-
+.form-group i{
+    position:absolute;
+    top:40px;
+    right:10px;
+}
 
 .register a:hover{
     color: brown;
@@ -249,6 +253,7 @@ form .form-control:focus{
         border-radius: 0.7em;
         border-color: brown;
     }
+    
 }
 
 
