@@ -16,7 +16,17 @@ form {
     animation-fill-mode: forwards;
 }
   
-  
+.messages{
+    font-family: 'Montserrat';
+    color: #af2732;
+    font-weight: 600;
+    list-style-type: none;
+    padding: unset;
+} 
+.text{
+    display: none;
+}
+
 @keyframes fadeInAnimation {
     0% {
         opacity: 0;
@@ -130,7 +140,7 @@ form .form-control:focus{
         box-sizing: border-box;
         position: relative;
         left: 62%;
-        margin-top: 10.5%;
+        margin-top: 14vh;
         width: 21vw;
         background: rgb(237 215 215 / 23%);
         border-radius: 1.2em;
@@ -152,7 +162,7 @@ form .form-control:focus{
     body .head{
         position: absolute;
         align-self: center;
-        margin: 22vh;
+        margin: 17vh 12vw;
         left: 4vw; 
         width: 20vw;
         color: brown;
