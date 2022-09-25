@@ -170,7 +170,10 @@ li{
     transition: 0.5s;
 
 }
-
+a{
+text-decoration: none;
+    color: black;
+}
 .comments{
     position: relative;
     display: flex;

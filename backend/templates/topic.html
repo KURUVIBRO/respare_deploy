@@ -153,7 +153,8 @@
         }).then(data=>{
             comments=document.getElementById("comments");
             data.forEach((u)=>{
-                data_c="<div class='comment'><a>"+u.user+"</a><p>"+u.body+"</p></div>"
+                data_c="<div class='comment'><a href='/user/"+u.user+"'>"+u.user+"</a><p>"+u.body+"</p></div>";
+                console.log(data_c);
                 comments.insertAdjacentHTML('beforeend',data_c);
             })
             //console.log(data[0].user);
