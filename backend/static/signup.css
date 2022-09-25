@@ -26,6 +26,8 @@ form {
      }
 }
 
+
+
 a{
     position: relative;
     top:3vh;
@@ -49,14 +51,34 @@ a:hover{
 }
 
 
-
 .head h1:hover{
     text-shadow: 0 0 3px #dadada , 0 0 5px #af2732;
-    transition: .5s;
+    transition: .5s all;
+    letter-spacing: 2.5px;
+}
+
+#name{
+    display: flex;
+    flex-direction: row;
+}
+
+.div-names{
+    width:fit-content;
+}
+
+.div-names .form-control{
+    width:70%;
 }
 
 
 
+small.req-text{
+    display: none;
+}
+
+small.uname-taken{
+    display:none;
+}
 
 body .container{
     position: relative;
@@ -122,7 +144,7 @@ form a:hover{
 
 
 
-.btn:hover{
+.btn:hover,.check-btn:hover{
     background: brown;
     color: white;
     transition: .6s;
@@ -194,6 +216,22 @@ form a:hover{
         border-color: brown;
     }
 
+    .check-btn{
+        position: absolute;
+        background: none;
+    /* justify-self: center; */
+        font-family: 'Montserrat';
+        top: 3vh;
+        left: 14vw;
+        color: brown;
+        font-weight: bold;
+        font-size: 1em;
+        width: 4vw;
+        height: 3vh;
+        border: 2px transparent;
+        border-radius: 0.7em;
+        border-color: brown;
+    }
     body .head{
         position: absolute;
         align-self: center;

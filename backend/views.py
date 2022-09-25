@@ -12,7 +12,7 @@ from django.contrib import messages
 from django.contrib.auth import authenticate, login, logout
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
-from .serializer import ChoiceSerializer,ChoiceIdSerializer, CommentSerailizer, NewCommentSerailizer
+from .serializer import ChoiceSerializer,ChoiceIdSerializer, CommentSerailizer, NewCommentSerailizer, ProfileSerializer
 from backend import serializer
 # Create your views here.
 
@@ -36,6 +36,12 @@ def register(request):
       pass1 = request.POST['pass1']
       pass2 = request.POST['pass2']
       
+      if uname=="":
+        return redirect("/register")
+
+      if User.objects.filter(username=uname).exists():
+        return redirect("/register")
+        #raise ValueError("Username Exists")
 
       myuser = User.objects.create_user(uname, email, pass1)
       myuser.first_name=fname
@@ -149,4 +155,12 @@ def profile(request,uname):
     profile=Profile.objects.get(uname=uname)
     return render(request,'user.html',{'user':profile})
 
-    
+@api_view(['GET','POST'])
+def check_user(request):
+        deserailizer=ProfileSerializer(data=request.data)
+        deserailizer.is_valid(raise_exception=True)
+        uname=deserailizer.validated_data['uname']
+        print(uname)
+        if Profile.objects.filter(uname=uname).exists():
+            return Response("1")
+        return Response("0")
