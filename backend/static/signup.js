@@ -35,6 +35,8 @@ var flag=1;
 
     function check_uname(){
         var uname=document.getElementById("uname").value;
+        if(uname=="")
+            return;
         console.log(uname);
         fetch('check_uname',{
             method:'POST',
