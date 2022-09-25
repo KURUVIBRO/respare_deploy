@@ -26,6 +26,10 @@ form {
 .text{
     display: none;
 }
+small{
+    font-family: 'Montserrat';
+}
+
 
 @keyframes fadeInAnimation {
     0% {

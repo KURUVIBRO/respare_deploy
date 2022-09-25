@@ -1,13 +1,14 @@
 
-    var username=document.querySelector('#uname');
-    var password=document.querySelector('#pass1');
-    username.addEventListener('keyup',function(){
-        var check=document.querySelector('#text1');
-         if(username.value=="")
-                check.style.display='block';
+    var inputs=document.getElementsByClassName("form-control");
+    function check(i){
+        input=document.getElementById(i);
+        var req=document.getElementById(i+"-req");
+         if(input.value=="")
+                req.style.display='block';
             else
-                check.style.display='none';
-    })
+                req.style.display='none';
+    
+    }
     
     password.addEventListener('change',function(){
         var check=document.querySelector('#text2');
@@ -18,10 +19,14 @@
     })
 
     function sub(e){
-    if(username.value=="" || password.value=="")
-        {
-            e=e || window.event;
-            e.preventDefault();
-        }
+        for(var i=0;i<inputs.length;i++)
+            if(inputs[i].value=="")
+                {
+                    e=e || window.event;
+                    e.preventDefault();
+                    var req=document.getElementById((inputs[i].id)+"-req");
+                    req.style.display='block';
+                    
+                }
     }
 console.log(username);
