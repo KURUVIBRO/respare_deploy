@@ -14,9 +14,11 @@ var flag=1,pflag=0;
         document.querySelector("#uname-taken").style.display="none";
         document.querySelector("#uname-avail").style.display="none";
         check("uname");
+        check_uname();
     }
 
     function sub(e){
+        e=e || window.event;
         for(var i=0;i<inputs.length;i++)
             if(inputs[i].value=="")
                 {
@@ -28,7 +30,6 @@ var flag=1,pflag=0;
                 }
         check_uname();
         if(flag==1 || pflag==1){
-            e=e || window.event;
             e.preventDefault();
         }
     }

@@ -164,3 +164,10 @@ def check_user(request):
         if Profile.objects.filter(uname=uname).exists():
             return Response("1")
         return Response("0")
+
+def search(request):
+    search=request.GET['search']
+    #topic= Topic.objects.all()
+    topic= Topic.objects.filter(title__icontains=search)
+    params = {'topic':topic}
+    return render(request,'search.html',params)

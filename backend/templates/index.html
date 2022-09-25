@@ -42,7 +42,9 @@
             {% else %}
             <a class="login" href="/signin">Login</a>
             {% endif %}
-            <input type="text" class="searchbox" placeholder="Search...">
+            <form method="get" action="/search">
+                <input type="text" class="searchbox" placeholder="Search..." name="search" id="search">
+            </form>
         </div>
     </div>
 
