@@ -332,4 +332,20 @@ form a:hover{
         left: 0vh;
       
     }
+    .check-btn{
+        position: absolute;
+        background: none;
+        /* justify-self: center; */
+        font-family: 'Montserrat';
+        top: 2vh;
+        left: 31vw;
+        color: brown;
+        font-weight: bold;
+        font-size: 1em;
+        width: 8vw;
+        height: 2vh;
+        border: 2px transparent;
+        border-radius: 0.7em;
+        border-color: brown;
+    }
 }
