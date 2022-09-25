@@ -66,13 +66,15 @@
         </div>
         <div class="form-group">
           <label class="form-control-label">New Password</label>
-          <input type="password" onchange="check('pass1')"  id="pass1" name="pass1" class="form-control">
+          <input type="password" onchange="check_password('pass1')"  id="pass1" name="pass1" class="form-control">
           <small id="pass1-req" class="req-text">Required</small>
+          <small id="pass1-check" class="pass-check req-text">Password doesn't match</small>
         </div>
         <div class="form-group">
           <label class="form-control-label">Confirm Password</label>
-          <input type="password" onchange="check('pass2')"  id="pass2" name="pass2" class="form-control" />
+          <input type="password" onchange="check_password('pass2')"  id="pass2" name="pass2" class="form-control" />
           <small id="pass2-req" class="req-text">Required</small>
+          <small id="pass2-check" class="pass-check req-text">Password doesn't match</small>
         </div>
         <div class="login-btm login-button">
           <button type="submit" class="btn btn-outline-primary">SUBMIT</button>

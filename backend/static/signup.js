@@ -1,5 +1,5 @@
 var inputs=document.getElementsByClassName("form-control");
-var flag=1;
+var flag=1,pflag=0;
     function check(i){
             input=document.getElementById(i);
             var req=document.getElementById(i+"-req");
@@ -27,7 +27,7 @@ var flag=1;
                     
                 }
         check_uname();
-        if(flag==1){
+        if(flag==1 || pflag==1){
             e=e || window.event;
             e.preventDefault();
         }
@@ -63,3 +63,20 @@ var flag=1;
         })
     }
 
+function check_password(pass){
+    document.getElementById("pass1-check").style.display="none";
+    document.getElementById("pass2-check").style.display="none";
+    check(pass);
+    console.log("Hi");
+    var pass1=document.getElementById("pass1").value;
+    var pass2=document.getElementById("pass2").value;
+    if(pass1!=pass2)
+        {
+            console.log("Incorrect: "+pass1+" "+pass2);
+            pflag=1;
+            document.getElementById("pass1-check").style.display="block";
+            document.getElementById("pass2-check").style.display="block";
+        }
+    else
+        pflag=0;
+}
