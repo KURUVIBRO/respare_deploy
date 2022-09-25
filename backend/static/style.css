@@ -211,7 +211,7 @@ body {
         min-width: 150px;
         width: 10vw;
         height: 20vh;
-        border-radius: 1em;
+        border-radius: 0.4em;
         overflow: hidden;
         margin-right: 10px;
         transition: 0.5s;
