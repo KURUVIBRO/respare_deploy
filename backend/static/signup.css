@@ -255,6 +255,7 @@ form a:hover{
 }
 
 @media screen and (max-width:1000px) {
+
     form .form-control{
         font-size: 1.5em;
     }
@@ -267,6 +268,13 @@ form a:hover{
         font-family: 'Cascadia Mono';
     }
 
+    small{
+        font-size: 1.5em;
+    }
+    .form-control-label {
+        font-size: 2em;
+    }
+
     .form-group {
         position: relative;
         margin-bottom: 40px;
@@ -277,9 +285,9 @@ form a:hover{
     form {
         box-sizing: border-box;
         position: relative;
-        left: 25vw;
+        left: 15vw;
         /* margin-top: 0%; */
-        width: 49vw;
+        width: 67vw;
         background: rgb(237 215 215 / 23%);
         border-radius: 1.2em;
         padding: 5%;
@@ -338,13 +346,13 @@ form a:hover{
     .check-btn{
         position: absolute;
         background: none;
-        /* justify-self: center; */
+    /* justify-self: center; */
         font-family: 'Montserrat';
         top: 2vh;
-        left: 31vw;
+        left: 45vw;
         color: brown;
         font-weight: bold;
-        font-size: 1em;
+        font-size: 1.5em;
         width: 8vw;
         height: 2vh;
         border: 2px transparent;
