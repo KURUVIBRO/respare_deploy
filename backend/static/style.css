@@ -665,6 +665,13 @@ body {
         background: rgba(255, 255, 255, 0.1);
     }
     
+    .title {
+        color: #bd0a0a;
+        font-weight: bolder;
+        text-shadow: #1D212B;
+        font-size: 27px;
+    }
+
     .pre-btn,
     .nxt-btn {
         position: absolute;
@@ -699,12 +706,7 @@ body {
         opacity: 1;
     }
     
-    .title {
-        color: #bd0a0a;
-        font-weight: bolder;
-        text-shadow: #1D212B;
-        font-size: 27px;
-    }
+   
     
     .prev-btn,
     .next-btn {
