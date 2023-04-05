@@ -19,6 +19,9 @@ from . import views
 
 urlpatterns = [
     path('',views.home,name="home"),
+    path('gettopics/',views.topic_api),
+    path('gettopic/',views.get_topic),
+    path('getchoices/',views.choice_api),
     path('about/',views.about),
     path('register/',views.register),
     path('register/check_uname',views.check_user),
@@ -26,8 +29,10 @@ urlpatterns = [
     path('user/<slug:uname>/',views.profile),
     path('signin/',views.signin,name="signin"),
     path('signout/',views.signout,name="signout"),
+    path('react/',views.react,name="react"), 
     path('topic/<int:pk>/react/',views.react,name="react"), 
     #path('topic/<int:pk>/reactions/',views.reactions),
+    path('getreactions/',views.get_reactions),
     path('topic/<int:pk>/reactstatus/',views.is_reacted) ,
     path('topic/<int:pk>/comment/',views.new_comment) ,
     path('topic/<int:pk>/comments/',views.comments) ,

@@ -182,6 +182,7 @@ text-decoration: none;
     left: 4%;
     top: 4vh;
     height: fit-content;
+    overflow-y: scroll;
 }
 
 .comment{

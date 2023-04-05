@@ -12,7 +12,7 @@ from django.contrib import messages
 from django.contrib.auth import authenticate, login, logout
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
-from .serializer import ChoiceSerializer,ChoiceIdSerializer, CommentSerailizer, NewCommentSerailizer, ProfileSerializer
+from .serializer import ChoiceSerializer,ChoiceIdSerializer,TopicIdSerializer, CommentSerailizer, NewCommentSerailizer, ProfileSerializer,TopicSerializer
 from backend import serializer
 # Create your views here.
 
@@ -86,16 +86,35 @@ def topic(request,pk):
     reactions=Choice.objects.filter(topic_id=pk)
     return render(request,'topic.html',{'topic':topic,'reactions':list(reactions),'message':None,'percent':None})
 
+@api_view(['GET'])
+def topic_api(request):
+    topics=Topic.objects.all()
+    serializer=TopicSerializer(topics,many=True)
+    return Response(serializer.data)
+
+@api_view(['POST','GET','PUT'])
+def choice_api(request):
+    deserializer=TopicIdSerializer(data=request.data)
+    deserializer.is_valid(raise_exception=True)
+    topic_id=deserializer.validated_data['id']
+    print(topic_id)
+    choices=Choice.objects.filter(topic=topic_id)
+    serializer=ChoiceSerializer(choices,many=True)
+    return Response(serializer.data)
+    
+
 @api_view(['GET','POST'])
-def react(request,pk):
+def react(request):
     #print(request.user.id,request.user.is_authenticated,request.data)
     if not request.user.is_authenticated: 
-          return Response("0")
+          return Response("-1")
     else:
         user=request.user
         deserializer=ChoiceIdSerializer(data=request.data)
         deserializer.is_valid(raise_exception=True)
         choice_id=deserializer.validated_data['id']
+        jk=Choice.objects.get(id=choice_id)
+        pk=jk.topic_id
         if Reaction.objects.filter(user_id=user).filter(topic_id=pk).exists():
             reaction=Reaction.objects.filter(user_id=user).get(topic_id=pk)
             old_choice=Choice.objects.get(id=reaction.choice_id)
@@ -113,9 +132,25 @@ def react(request,pk):
         else:
             reaction=Reaction(time=datetime.now(),choice_id=choice_id,user_id=user.id,topic_id=pk)
             reaction.save()
-        return Response("Okk")
+        return Response(pk)
 
+@api_view(['GET','POST'])
+def get_topic(request):
+    deserializer=TopicIdSerializer(data=request.data)
+    deserializer.is_valid(raise_exception=True)
+    topic_id=deserializer.validated_data['id']
+    topic=Topic.objects.get(id=topic_id)
+    serializer=TopicSerializer(topic)
+    return Response(serializer.data)
     
+@api_view(['GET','POST'])
+def get_reactions(request):
+    deserializer=TopicIdSerializer(data=request.data)
+    deserializer.is_valid(raise_exception=True)
+    pk=deserializer.validated_data['id']
+    choicelist=Choice.objects.filter(topic_id=pk)  
+    serializer=ChoiceSerializer(choicelist,many=True)
+    return Response(serializer.data)
 
 @api_view(['GET','POST'])
 def is_reacted(request,pk):
@@ -136,11 +171,12 @@ def comments(request,pk):
 
 @api_view(['GET','POST'])
 def new_comment(request,pk):
+    
     user=request.user
     if not user.is_authenticated: 
         return Response("0")
     profile=Profile.objects.get(user_id=user)
-    print(profile)
+    print(profile.uname)
     deserializer=NewCommentSerailizer(data=request.data)
     deserializer.is_valid(raise_exception=True)
     comment=deserializer.validated_data['body']
@@ -148,7 +184,6 @@ def new_comment(request,pk):
     newcomment=Comment(user_id=profile.uname,topic_id=pk,body=comment)
     newcomment.save()
     serializer=CommentSerailizer(newcomment)
-    print(serializer.data)
     return Response(serializer.data)      
 
 def profile(request,uname):
