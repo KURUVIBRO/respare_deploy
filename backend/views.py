@@ -14,6 +14,12 @@ from rest_framework.decorators import api_view
 from rest_framework.response import Response
 from .serializer import ChoiceSerializer,ChoiceIdSerializer,TopicIdSerializer, CommentSerailizer, NewCommentSerailizer, ProfileSerializer,TopicSerializer
 from backend import serializer
+import joblib
+from sklearn. tree import DecisionTreeClassifier
+from sklearn. feature_extraction. text import CountVectorizer
+cv = joblib.load('ML/cv.joblib')
+model = joblib.load('ML/my_model.joblib')
+print(model)
 # Create your views here.
 
 def home(request):
@@ -181,6 +187,12 @@ def new_comment(request,pk):
     deserializer.is_valid(raise_exception=True)
     comment=deserializer.validated_data['body']
     print(comment)
+    inp= cv.transform([comment]).toarray()
+    pred=model.predict(inp)
+    print(pred)
+    if(pred=="Offensive Speech" or pred=="Hate Speech"):
+        print("ff")
+        return Response("1")
     newcomment=Comment(user_id=profile.uname,topic_id=pk,body=comment)
     newcomment.save()
     serializer=CommentSerailizer(newcomment)

@@ -47,6 +47,61 @@ body {
         opacity: 1;
      }
 }
+.hatespeech {
+    position: absolute;
+    display: block;
+    opacity: 0;
+    margin: 6px 21px;
+    transition: all ease-in-out 0.2s;
+    /* background: #f3f3f3bd; */
+    color: #b80707;
+    /* padding: 1px 8px; */
+}
+.comments {
+    margin-top: 20px;
+}
+#off-msg {
+    position: fixed;
+    /* left: 124vh; */
+    bottom: 8vh;
+    background: #9900003d;
+    font-family: Satoshi;
+    font-weight: normal;
+    padding: 15px 28px;
+    font-size: large;
+    border-radius: 11px;
+    right: 3vw;
+    z-index: 10;
+    display: block;
+    opacity: 0;
+    width: 20vw;
+    transition: all ease-in-out 0.5s;
+}
+i.fa.fa-comments {
+    scale: 2.3;
+    transition: all 0.3s;
+}
+i.fa.fa-comments:hover {
+    scale: 2.6;
+}
+
+.topic .comments-btn {
+    /*font-size: 1.1em;*/
+    position: absolute;
+    /* margin-top: 1.3vh; */
+    /* left: 31.5vw; */
+    /* width: 7vw; */
+    background: none;
+    /*font-family: 'Satoshi';*/
+    color: #616977;
+}
+
+.comment-send{
+    display: flex;
+    flex-direction: row;
+}
+
+
 
 @media screen and (min-width: 920px) {
 
@@ -62,6 +117,7 @@ body {
         overflow: hidden;
         z-index: 14;
     }
+
     
     .nav a {
         float: left;
@@ -225,7 +281,7 @@ body {
         font-family: 'Satoshi';
         color: #616977;
     }
-    .topic .comments-btn {
+    /*.topic .comments-btn {
         font-size: 1.1em;
         position: absolute;
         margin-top: 1.3vh;
@@ -234,7 +290,7 @@ body {
         background: none;
         font-family: 'Satoshi';
         color: #616977;
-    }
+    }*/
 
     .poll{
         display: flex;
@@ -343,28 +399,29 @@ body {
         position: relative;
         width: 90%;
         resize: none;
-        background: rgb(243 243 243);
+        background: #c9d4eb;
+       
         border: 2px solid transparent;
         border-radius: 1.1em;
         outline: none;
         height: fit-content;
         font-family: 'Montserrat';
         font-weight: lighter;
+        overflow: hidden;
         padding: 1em;
         font-size: 1.2em;
         line-height: 1.2;
     }
     
     .comments-input textarea:focus{
-        border-color:rgb(199, 188, 188);
-        transition: 0.5s;
-    
+        transition: all 0.5s ease-in-out;
+        background: rgb(243 243 243);
     }
 
     .post{
         position: relative;
         top: 3%;
-        left: 83%;
+        left: 7px;
         height: 2em;
         width: 13%;
         background: #0c111b;
@@ -527,7 +584,7 @@ body {
     }
     .nav {
         position: relative;
-        background-color: #bd0a0a;
+        background-color: #171a1f;
         top: 0vh;
         overflow: hidden;
         width: 101%;
@@ -536,17 +593,18 @@ body {
         /* display: flex; */
         /* flex-direction: row; */
     }
+
     
     .nav a {
-        position: relative;
-        float: left;
-        color: #f2f2f2;
-        left: 3vw;
-        text-align: center;
-        padding: 14px 16px;
-        text-decoration: none;
-        /* top: 0vh; */
-        /* font-size: 3em; */
+    position: relative;
+    float: left;
+    color: #f2f2f2;
+    left: -45vw;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    /* top: 0vh; */
+    font-size: 2em;
     }
     
     .nav a:hover {
@@ -567,17 +625,142 @@ body {
         font-weight: bolder;
         font-family: 'Aleo';
     }
-    
-    .comment-section{
+
+    .topic-box {
+        display: flex;
+        flex-direction: column;
         position: relative;
-        align-self: center;
-        width: 90%;
+        left: 0.5vw;
+        width: 100%;
+        height: 100vh;
+        background: #eef2ff;
+        border: solid 1.5px #9aa0b0;
+        font-family: Satoshi;
+    }
+
+    .comment-section {
+        position: relative;
+         align-self:flex-start;
+        width: 100%;
         height: fit-content;
         margin-top: 1vh;
         border-radius: 1em;
         display: flex;
         flex-direction: column;
     }
+
+    .post {
+        position: relative;
+        /* top: 20%; */
+        top: 19px;
+        /* right: 10%; */
+        left: 44px;
+        height: 2.1em;
+        scale: 1.86;
+        width: 6%;
+        background: #0c111b;
+        border: none;
+        border-radius: 0.75em;
+        font-size: 1.1em;
+        font-family: 'Cascadia Mono';
+        font-weight: bold;
+        color: aliceblue;
+    }
+    .topic img{
+        height: 50%;
+        max-height: 29vh;
+        width: 85%;
+        object-fit: cover;
+        margin-top: 1.5vh;
+        border-radius: 18px;
+    }
+
+    .topic{
+        padding: 4vh 6vw;
+        /*padding: 4.2vh 6.3vw;*/
+    }
+
+    topic p{
+        width: 85vw;
+    }
+    .topic p {
+        font-size: 0.7em;
+        margin-top: .8vh;
+        font-weight: normal;
+        font-family: 'Satoshi';
+        color: #616977;
+    }
+
+    .poll {
+        display: flex;
+        flex-direction: column;
+        /* position: absolute; */
+        margin: 1.7vh 0 1vw 0;
+        /* bottom: -2vh; */
+    }
+
+    .result {
+        display: flex;
+        width: 49vw;
+        position: relative;
+        margin-top: 2%;
+        /* top: 87%; */
+    }
+    span.stat {
+        width: 10vw;
+        height: 0.7vh;
+        transition: all .9s;
+    }
+    .result {
+        display: flex;
+        width: 49vw;
+        position: relative;
+        margin-top: 2%;
+        /* top: 87%; */
+    }
+
+
+
+    .poll button {
+        margin: 1vw 0.4vh;
+        border: none;
+        color: #dee4f5;
+        border-radius: 0.7vw;
+        padding: .8vw .8vh;
+        min-width: 9vw;
+        max-width: max-content;
+        height: 2vh;
+        font-family: Satoshi;
+        font-size: 1em;
+        transition: .3s ease-in-out;
+    }
+
+    .topic.topic-full {
+        top: 0vh;
+        font-size: 0.9em;
+        /* margin-top: 80vh; */
+        left: 50.5vw;
+        transform: translate(-50%,-82%) scale(0);
+        border: none;
+        height: 94vh;
+        /* left: 0; */
+        /* top: 0; */
+        position: fixed;
+        width: 100vw;
+        border-radius: 0.5vw;
+        z-index: 10;
+    }
+
+    .topic img {
+        height: 21vh;
+        max-height: 29vh;
+        width: 95%;
+        object-fit: cover;
+        margin-top: 1.5vh;
+        border-radius: 18px;
+    }
+    
+    
     
     .comment-section h3{
         position: relative;
@@ -592,17 +775,17 @@ body {
     .comments-input textarea{
         display: block;
         position: relative;
-        width: 90%;
+        width: 80%;
         resize: none;
         background: rgb(243 243 243);
         border: 2px solid transparent;
         border-radius: 1.1em;
         outline: none;
         height: fit-content;
+        overflow-y: hidden;
         font-family: 'Archivo';
         padding: 1em;
         font-size: 1.3em;
-        line-height: 1.2;
     }
     
     .comments-input textarea:focus{

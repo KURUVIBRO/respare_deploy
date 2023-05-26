@@ -78,11 +78,11 @@ WSGI_APPLICATION = 'respare.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.mysql',
+        'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'respare',
-        'USER':'root',
-        'PASSWORD':'aravind',
-        'PORT':3306,
+        'USER':'postgres',
+        'PASSWORD':'new_password',
+        'PORT':5432,
         'HOST': '127.0.0.1'
     }
 }

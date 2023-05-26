@@ -10,8 +10,9 @@ class Topic(models.Model):
     id=models.IntegerField(primary_key=True)
     title=models.CharField(max_length=255)
     description=models.CharField(max_length=500)
-    image=models.URLField(max_length=200,default=None)
-    wide_image=models.URLField(max_length=200,default=None)
+    category=models.CharField(max_length=100,default="None")
+    image=models.URLField(default=None)
+    wide_image=models.URLField(default=None)
     def __str__(self)->str:
         return str(self.id)+'.  '+self.title
 

@@ -26,6 +26,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
     
 </head>
@@ -38,44 +39,11 @@
             <a class="login">Hello, {{user.username}}</a>
             {% endif %}
     </div>
-
+    <div id="off-msg">
+        <span>Can't post the comment, Check whether it contains any Offensive words.</span>
+    </div>
     <div class="topic-box" id="topic-container">
-        <div class="topic" >
-            
-            <p>posted by respare</p>
-            <h1>Helmet camera Banned in Kerala</h1>
-            <p>
-                The Motor Vehicle Department (MVD) of Kerala, it seems has 
-                just banned helmet cameras. This information comes from an 
-                internal circular circulated among MVD officials... 
-            </p>
-            <img src="/static/img.jpg">
-            <div class="poll">
-                <button>Very Good</button>
-                <button>Very Bad</button>
-                <button data-modal-target="-1" class="comments" >2 Comments</button>
-            </div>
-            <span class="stat">
-            </span>
-        </div>
-        <div class="topic topic-full" id="-1">
-            <button class="close-btn">&times;</button>
-            <p>posted by respare</p>
-            <h1>Helmet camera Banned in Kerala</h1>
-            <p>
-                The Motor Vehicle Department (MVD) of Kerala, it seems has 
-                just banned helmet cameras. This information comes from an 
-                internal circular circulated among MVD officials... 
-            </p>
-            <img src="/static/img.jpg">
-            <div class="poll">
-                <button>Very Good</button>
-                <button>Very Bad</button>
-            </div>
-            <span class="stat">
-            </span>
-            {% csrf_token %}
-        </div>
+        
         {% csrf_token %}
         {% csrf_token %}
         {% csrf_token %}

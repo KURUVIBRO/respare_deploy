@@ -21,13 +21,37 @@ function closeModal(modal){
     overlay.classList.remove('active');
 }*/
 
+
+function show_offensive(t_id)
+{
+    off=document.getElementById("off-"+t_id);
+    off.style.opacity=100;
+    off2=document.getElementById("off-msg");
+    off2.style.opacity=100;
+    //off2.style.display="block";
+}
+function close_offense(t_id)
+{
+    off=document.getElementById("off-"+t_id);
+    off.style.opacity=0;
+    off2.style.opacity=0;
+    //off2.style.display="none";
+}
 function openModal(t_id){
     
     modal=document.getElementById(t_id);
     if(modal==null) return
     modal.classList.add('active');
     overlay.classList.add('active');
+    console.log("Hi");
+    textarea = document.getElementById("c-input"+t_id);
+    textarea.addEventListener('input', autoResize, false);
     
+    function autoResize() {
+        console.log("Hi");
+        this.style.height = 'auto';
+        this.style.height = this.scrollHeight + 'px';
+    }
 
 }
 
@@ -36,7 +60,10 @@ function closeModal(t_id){
     if(modal==null) return
     modal.classList.remove('active');
     overlay.classList.remove('active');
-    var topic=document.element
+    off2=document.getElementById("off-msg");
+    off2.style.opacity=0;
+    //off2.style.display="none";
+    //close_offense(t_id);
 }
 
 
@@ -116,7 +143,7 @@ async function loadChoices(t_id){
             data_c=data_c+"<button onclick='f("+u.id+")' class='btn-"+i+"'>"+u.option+"</button>";
             i++;
             })
-            data_c=data_c+"<button data-modal-target='"+t_id+"' class='comments-btn' onclick='openModal("+t_id+")' >Comments</button></div><div class='result'>";
+            data_c=data_c+"<button data-modal-target='"+t_id+"' class='comments-btn' onclick='openModal("+t_id+")' ><i class='fa fa-comments'></i></button></div><div class='result'>";
             var x=1;
             data.forEach((u)=>{
             data_c=data_c+"<span class='stat btn-"+x+"' id='result-"+u.id+"'></span>";
@@ -185,10 +212,17 @@ async function loadChoices(t_id){
         .then(data=>{
             if(data=="0")
                 window.location.href = "/signin";
+            else if(data=="1")
+                {
+                console.log("Offensive");
+                show_offensive(t_id);}
+            else
+                {
+            close_offense(t_id);
             data_c="<div class='comment'><a>"+data.user+"</a><p>"+data.body+"</p></div>";
             comments=document.getElementById("comments"+t_id);
             comments.insertAdjacentHTML('afterbegin',data_c);
-            textbox.value="";
+            textbox.value="";}
            // self.location.reload();
         })
         //$( '.comments').load(location.href+" .comments");
@@ -209,8 +243,8 @@ async function loadTopics(){
         data_c="<div class='topic' onclick='openModal("+u.id+")'><p class='tag'>posted by respare</p><h1>"+u.title+"</h1><p>"+
         u.description+"</p><img src="+u.wide_image+"><div class='poll' id='poll"+u.id+"'></div></div>";
         data_c=data_c+"<div class='topic topic-full' id='"+u.id+"'><button class='close-btn' onclick='closeModal("+u.id+")'>&times;</button><div class='topic full'><p class='tag'>posted by respare</p><h1>"+u.title+"</h1><p>"+
-        u.description+"</p><img src="+u.wide_image+"><div class='poll' id='full-poll"+u.id+"'></div><div class='comment-section' id='comment-section"+u.id+"'><div class='comments-input'>"+
-        "<textarea id='c-input"+u.id+"' rows='1' columns='' placeholder='Share are your opinion' onchange='linebreak("+u.id+")'></textarea><button class='post' onclick='comment("+u.id+")'>></button></div><div id='comments"+u.id+"' class='comments'><h3>Comments</h3></div></div></div></div>";
+        u.description+"</p><img src="+u.wide_image+"><div class='poll' id='full-poll"+u.id+"'></div><div class='comment-section' id='comment-section"+u.id+"'><div class='comments-input'><div class='comment-send'>"+
+        "<textarea id='c-input"+u.id+"' rows='1' onchange='close_offense("+u.id+")' columns='' placeholder='Share are your opinion' onchange='linebreak("+u.id+")'></textarea><button class='post' onclick='comment("+u.id+")'><i class='fa fa-send-o'></i></button></div><div class='hatespeech' id='off-"+u.id+"'><span>! Offensive Language Detected</span></div></div><div id='comments"+u.id+"' class='comments'><h3>Comments</h3></div></div></div></div>";
         topics.insertAdjacentHTML('beforeend',data_c);
         
         loadChoices(u.id);
