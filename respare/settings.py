@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/4.0/ref/settings/
 """
 import os
 from pathlib import Path
+import dj_database_url
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -77,17 +78,10 @@ WSGI_APPLICATION = 'respare.wsgi.application'
 # https://docs.djangoproject.com/en/4.0/ref/settings/#databases
 
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'respare_yuvs',
-        'USER':'admin',
-        'PASSWORD':'rFKtoeJ7FFtmCv8E3Dlc6288pz9lJXpf',
-        'PORT':5432,
-        'HOST': 'postgres://admin:rFKtoeJ7FFtmCv8E3Dlc6288pz9lJXpf@dpg-chmc9e82qv27ib6lp33g-a.singapore-postgres.render.com/respare_yuvs'
-    }
+    'default': dj_database_url.parse(os.environ.get('postgres://admin:rFKtoeJ7FFtmCv8E3Dlc6288pz9lJXpf@dpg-chmc9e82qv27ib6lp33g-a.singapore-postgres.render.com/respare_yuvs'), conn_max_age=600)
 }
 
-import dj_database_url
+
 db_from_env=dj_database_url.config(conn_max_age=600)
 DATABASES['default'].update(db_from_env)
 
