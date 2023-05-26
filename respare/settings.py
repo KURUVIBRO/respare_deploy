@@ -83,7 +83,7 @@ DATABASES = {
         'USER':'admin',
         'PASSWORD':'rFKtoeJ7FFtmCv8E3Dlc6288pz9lJXpf',
         'PORT':5432,
-        'HOST': 'postgres://admin:rFKtoeJ7FFtmCv8E3Dlc6288pz9lJXpf@dpg-chmc9e82qv27ib6lp33g-a/respare_yuvs'
+        'HOST': 'postgres://admin:rFKtoeJ7FFtmCv8E3Dlc6288pz9lJXpf@dpg-chmc9e82qv27ib6lp33g-a.singapore-postgres.render.com/respare_yuvs'
     }
 }
 
