@@ -187,12 +187,12 @@ def new_comment(request,pk):
     deserializer.is_valid(raise_exception=True)
     comment=deserializer.validated_data['body']
     print(comment)
-    inp= cv.transform([comment]).toarray()
-    pred=model.predict(inp)
-    print(pred)
-    if(pred=="Offensive Speech" or pred=="Hate Speech"):
-        print("ff")
-        return Response("1")
+    #inp= cv.transform([comment]).toarray()
+    #pred=model.predict(inp)
+    #print(pred)
+    #if(pred=="Offensive Speech" or pred=="Hate Speech"):
+        #print("ff")
+        #return Response("1")
     newcomment=Comment(user_id=profile.uname,topic_id=pk,body=comment)
     newcomment.save()
     serializer=CommentSerailizer(newcomment)
