@@ -81,7 +81,7 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'respare_yuvs',
-        'USER': 'masteruser',
+        'USER': 'admin',
         'PASSWORD': 'rFKtoeJ7FFtmCv8E3Dlc6288pz9lJXpf',
         'HOST': 'dpg-chmc9e82qv27ib6lp33g-a',
         'PORT': '5432'
