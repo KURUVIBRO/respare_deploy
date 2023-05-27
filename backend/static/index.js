@@ -34,6 +34,7 @@ function close_offense(t_id)
 {
     off=document.getElementById("off-"+t_id);
     off.style.opacity=0;
+    off2=document.getElementById("off-msg");
     off2.style.opacity=0;
     //off2.style.display="none";
 }
