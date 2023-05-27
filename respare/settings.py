@@ -77,10 +77,20 @@ WSGI_APPLICATION = 'respare.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/4.0/ref/settings/#databases
-
 DATABASES = {
-    'default': dj_database_url.parse(os.environ.get('postgres://admin:rFKtoeJ7FFtmCv8E3Dlc6288pz9lJXpf@dpg-chmc9e82qv27ib6lp33g-a.singapore-postgres.render.com/respare_yuvs'), conn_max_age=600)
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'respare_yuvs',
+        'USER': 'masteruser',
+        'PASSWORD': 'rFKtoeJ7FFtmCv8E3Dlc6288pz9lJXpf',
+        'HOST': 'dpg-chmc9e82qv27ib6lp33g-a',
+        'PORT': '5432'
+    }
 }
+
+#DATABASES = {
+    #default': dj_database_url.parse(os.environ.get('postgres://admin:rFKtoeJ7FFtmCv8E3Dlc6288pz9lJXpf@dpg-chmc9e82qv27ib6lp33g-a.singapore-postgres.render.com/respare_yuvs'), conn_max_age=600)
+#}
 
 
 db_from_env=dj_database_url.config(conn_max_age=600)
