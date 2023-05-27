@@ -80,11 +80,11 @@ WSGI_APPLICATION = 'respare.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'respare_yuvs',
-        'USER': 'admin',
-        'PASSWORD': 'rFKtoeJ7FFtmCv8E3Dlc6288pz9lJXpf',
-        'HOST': 'dpg-chmc9e82qv27ib6lp33g-a',
-        'PORT': '5432'
+        'NAME': 'railway',
+        'USER': 'postgres',
+        'PASSWORD': '5VhgR6M57Hhy8KHXbFPM',
+        'HOST': 'containers-us-west-22.railway.app',
+        'PORT': '6187'
     }
 }
 
